@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!--LUMENARY:HEAD-->
+<title>Lumenary</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Lumenary by Storitellah: a dictionary of photography with every term explained in plain English and in technical depth.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<!--/LUMENARY:HEAD-->
+</head>
+<body>
+<!--LUMENARY:BODY-->
+<a class="skip" href="#entries">Skip to the dictionary</a>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="logo" href="https://storitellah.com" rel="noopener" aria-label="Lumenary by Storitellah: visit storitellah.com">
+      <svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2.4"/>
+        <path d="M24 15.5L11.58 8.33M31.36 19.75L31.36 5.4M31.36 28.25L43.79 21.08M24 32.5L36.42 39.67M16.64 28.25L16.64 42.6M16.64 19.75L4.21 26.92" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <path d="M24 15.5L31.36 19.75L31.36 28.25L24 32.5L16.64 28.25L16.64 19.75Z" fill="var(--amber)" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+      <span class="logo-text">
+        <span class="logo-name">Lumenary</span>
+        <span class="logo-sub">by Storitellah</span>
+      </span>
+    </a>
+
+    <form class="search" role="search" id="search-form">
+      <label class="visually-hidden" for="q">Search the dictionary</label>
+      <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search 286 photography terms" aria-describedby="search-hint">
+      <button type="submit" class="search-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <span id="search-hint" class="search-hint">Press <kbd>/</kbd> to search</span>
+    </form>
+  </div>
+  <div class="wrap"><p class="strap">The dictionary of photography, from <em>aperture</em> to <em>Zone System</em>. Every term explained twice: once in plain English, once in technical depth.</p></div>
+</header>
+
+<nav class="azbar" aria-label="Browse by letter">
+  <div class="wrap azbar-inner" id="az"></div>
+</nav>
+
+<div class="wrap layout">
+  <main id="entries" class="entries" tabindex="-1" aria-live="polite">
+    <div class="results-bar">
+      <p id="status" class="status"></p>
+      <div class="sense-switch" role="radiogroup" aria-label="Which explanations to show">
+        <button type="button" role="radio" data-sense="both" aria-checked="true">Both</button>
+        <button type="button" role="radio" data-sense="plain" aria-checked="false">Plain English</button>
+        <button type="button" role="radio" data-sense="tech" aria-checked="false">Technical</button>
+      </div>
+    </div>
+    <div id="list"></div>
+  </main>
+
+  <aside class="side">
+    <section class="panel wotd" aria-labelledby="wotd-h">
+      <h2 id="wotd-h" class="panel-h">Word of the day</h2>
+      <div id="wotd"></div>
+    </section>
+
+    <section class="panel topics-panel" aria-labelledby="topics-h">
+      <h2 id="topics-h" class="panel-h">Browse by topic</h2>
+      <div class="chips" id="chips"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="how-h">
+      <h2 id="how-h" class="panel-h">How to read an entry</h2>
+      <dl class="key">
+        <div><dt><span class="tag tag-plain">Plain English</span></dt><dd>A short, everyday explanation for anyone picking up a camera.</dd></div>
+        <div><dt><span class="tag tag-tech">Technical</span></dt><dd>The precise meaning, with the numbers and science behind it.</dd></div>
+        <div><dt><span class="gr">[C]</span> <span class="gr">[U]</span></dt><dd>Countable and uncountable nouns.</dd></div>
+        <div><dt><span class="ipa">/ˈæp.ə.tʃər/</span></dt><dd>UK pronunciation in the International Phonetic Alphabet.</dd></div>
+      </dl>
+      <button type="button" class="btn-ghost" id="random">Show me a random term</button>
+    </section>
+
+    <section class="panel contact" aria-labelledby="contact-h">
+      <h2 id="contact-h" class="panel-h">Missing a term?</h2>
+      <p>Suggestions, corrections and questions are welcome.</p>
+      <p class="email-row"><a class="email" href="mailto:info@storitellah.com?subject=Lumenary%20suggestion">info@storitellah.com</a>
+        <button type="button" class="copy-email" data-copy="info@storitellah.com">Copy</button></p>
+    </section>
+  </aside>
+</div>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p class="footer-brand"><a href="https://storitellah.com" rel="noopener">Lumenary</a> is a Storitellah project. Definitions are written in British English.</p>
+    <p>Contact: <a href="mailto:info@storitellah.com">info@storitellah.com</a></p>
+    <p><a href="#" id="to-top">Back to top</a></p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="assets/js/terms.js"></script>
+<script src="assets/js/app.js"></script>
+<!--/LUMENARY:BODY-->
+</body>
+</html>
