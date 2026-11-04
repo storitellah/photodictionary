@@ -9,6 +9,15 @@ Entries also carry part of speech, countable/uncountable codes, UK pronunciation
 
 The logo links to [storitellah.com](https://storitellah.com). Questions and suggestions: **info@storitellah.com**.
 
+## Photo Dictionary (illustrated flipbook)
+
+`book/` holds **Photo Dictionary by Storitellah**, an illustrated flipbook covering eight core composition techniques: depth of field and layering, framing, the golden ratio and Fibonacci spiral, juxtaposition, leading lines, negative space, the rule of thirds, and symmetry and pattern. Each entry spans two pages: the dictionary entry (pronunciation, part of speech, domain labels, numbered senses, examples, word partners) and a plate with an annotated SVG diagram, an "In practice" note on how named photographers use it, and cross-references.
+
+- Two-page spread on wide screens, single page on phones and narrow tablets
+- Turn pages by dragging a corner, swiping, tapping either side, the arrow/Page Up/Page Down/Home/End keys, the buttons or the slider
+- Index panel and a contents page, with links such as `book/#rule-of-thirds`
+- Files: `book/index.html`, `book/book.css`, `book/book.js` (flip engine), `book/content.js` (entries and page templates), `book/diagrams.js` (plates)
+
 ## Features
 
 - Instant search across headwords, abbreviations and definitions, with highlighted matches
@@ -21,7 +30,8 @@ The logo links to [storitellah.com](https://storitellah.com). Questions and sugg
 ## Project layout
 
 ```
-index.html              page shell
+index.html              Lumenary glossary page
+book/                   Photo Dictionary flipbook
 assets/css/style.css    styles
 assets/js/app.js        search, filters, rendering, permalinks
 assets/js/terms.js      generated term data (do not edit by hand)

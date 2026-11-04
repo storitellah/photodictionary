@@ -255,3 +255,4 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
   html { scroll-behavior: smooth; }
   .entry.is-target { transition: box-shadow 0.3s; }
 }
+.strap-link { color: var(--amber); font-family: var(--f-ui); font-size: var(--s-1); font-weight: 600; white-space: nowrap; }
