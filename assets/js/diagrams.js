@@ -194,6 +194,27 @@ window.PD_FIGS = (function () {
       '<path d="M150 0 V200" stroke="#fdfdfb" stroke-width="8"/>');
   }
 
+
+  /* E — consent as a process */
+  function consent() {
+    var steps = [["Explain", "uses and risks"], ["Ask", "free choice"], ["Record", "form or voice"], ["Review", "each new use"], ["Respect", "withdrawal"]];
+    var out = "", x0 = 10, w = 52, gap = 7;
+    steps.forEach(function (st, i) {
+      var x = x0 + i * (w + gap);
+      out += '<rect x="' + x + '" y="62" width="' + w + '" height="46" rx="6" fill="' + (i === 0 ? "#00738c" : "#ffffff") + '" stroke="#00738c" stroke-width="1.4"/>';
+      out += '<text x="' + (x + w / 2) + '" y="82" text-anchor="middle" class="lbl step' + (i === 0 ? " on" : "") + '">' + st[0] + "</text>";
+      out += '<text x="' + (x + w / 2) + '" y="96" text-anchor="middle" class="lbl tiny' + (i === 0 ? " on" : "") + '">' + st[1] + "</text>";
+      if (i < steps.length - 1) out += '<path d="M' + (x + w + 1) + " 85 h" + (gap - 2) + '" stroke="#00738c" stroke-width="1.4" marker-end="url(#mE)"/>';
+    });
+    return svg("0 0 300 170", "A five-step consent pathway: explain, ask, record, review before each new use, and respect withdrawal, with an arrow looping from the last step back to the first.",
+      '<defs><marker id="mE" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#00738c"/></marker></defs>' +
+      '<rect width="300" height="170" fill="#f3f7f8"/>' +
+      '<text x="150" y="34" text-anchor="middle" class="lbl head">INFORMED CONSENT IS A PROCESS</text>' +
+      out +
+      '<path d="M272 112 V136 H36 V114" fill="none" stroke="var(--hot)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#mE)"/>' +
+      '<text x="154" y="152" text-anchor="middle" class="lbl hot">new use or new risk: go back and ask again</text>');
+  }
+
   /* Cover emblem: an aperture iris */
   function emblem() {
     return '<svg class="emblem" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.6"/>' +
@@ -201,5 +222,5 @@ window.PD_FIGS = (function () {
       '<path d="M24 15.5L31.36 19.75L31.36 28.25L24 32.5L16.64 28.25L16.64 19.75Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>';
   }
 
-  return { depth: depth, framing: framing, golden: golden, juxta: juxta, leading: leading, negative: negative, thirds: thirds, symmetry: symmetry, emblem: emblem };
+  return { depth: depth, framing: framing, golden: golden, juxta: juxta, leading: leading, negative: negative, thirds: thirds, symmetry: symmetry, emblem: emblem, consent: consent };
 })();

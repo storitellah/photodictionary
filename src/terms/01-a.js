@@ -1,4 +1,4 @@
-/* Lumenary term data. Fields:
+/* The Dictionary of Photography: term data. Fields:
    t  headword · ipa  UK pronunciation (single words only) · pos  part of speech
    gr grammar code ([C] countable, [U] uncountable, [T] transitive) · v  variant spelling
    c  category · s  plain-English sense · se  plain example
