@@ -1,6 +1,6 @@
 # The Dictionary of Photography by Storitellah
 
-An illustrated flipbook dictionary of photography, laid out like a printed learner's dictionary: guide words and folios in the running heads, justified two-column entries, thumb-index tabs for each letter, and a pronunciation key along the foot of every page.
+Written by **Brian Otieno**. An illustrated flipbook dictionary of photography, laid out like a printed learner's dictionary: guide words and folios in the running heads, justified two-column entries, thumb-index tabs for each letter, and a pronunciation key along the foot of every page.
 
 **395 entries**, each with a pronunciation (British IPA), part of speech, grammar code, subject label, an **IN SHORT** sense in plain English, a **TECHNICAL** sense, examples and cross-references. Coverage includes:
 
@@ -29,6 +29,7 @@ assets/css/book.css      styles and the three colour modes
 assets/js/book.js        flip engine, search, index, colour modes, sound
 assets/js/content.js     glossary renderer and paginator, study pages, front and back matter
 assets/js/diagrams.js    SVG plates
+assets/js/covers.js      cover artwork (mudcloth border of photography doodles)
 assets/js/terms.js       generated term data (do not edit by hand)
 assets/img/              logo and favicons
 src/terms/*.js           term data: edit these

@@ -468,23 +468,22 @@ window.PD = (function () {
   /* ===================================================================
      Front and back matter
      =================================================================== */
+  var COVER_ID = "mudcloth";
+  function pageAspect() {
+    var cs = getComputedStyle(document.documentElement);
+    var w = parseFloat(cs.getPropertyValue("--pw")), h = parseFloat(cs.getPropertyValue("--ph"));
+    return w && h ? w / h : 0.7;
+  }
   function cover() {
-    return '<article class="page cover" aria-label="Front cover">' +
-      '<div class="cover-in">' +
-      '<p class="cover-pub">Storitellah · First Edition</p>' +
-      F.emblem() +
-      '<h1 class="cover-title"><span class="cover-the">The</span>Dictionary <span class="cover-of">of</span> Photography</h1>' +
-      '<p class="cover-by">by Storitellah</p>' +
-      '<p class="cover-tag">The essential lexicon of visual language, technique and practice</p>' +
-      '<p class="cover-foot">' + TERMS.length + " entries · Study pages · Pronunciations</p>" +
-      "</div></article>";
+    return '<article class="page cover cover--art" aria-label="Front cover: The Dictionary of Photography by Brian Otieno">' +
+      window.PD_COVERS.render(COVER_ID, "", false, pageAspect()) + "</article>";
   }
   function backCover(side) {
-    return '<article class="page cover cover--back page--' + side + '" aria-label="Back cover">' +
-      '<div class="cover-in">' + F.emblem() +
-      '<p class="back-blurb">From the daguerreotype to the deepfake, from aperture to informed consent: <b>The Dictionary of Photography</b> defines ' + TERMS.length + " terms twice over, in plain English and in technical depth, with illustrated study pages on composition and on photographing people with care.</p>" +
-      '<p class="cover-by"><a href="https://storitellah.com" rel="noopener">storitellah.com</a></p>' +
-      '<p class="cover-foot">info@storitellah.com</p></div></article>';
+    return '<article class="page cover cover--art cover--back page--' + side + '" aria-label="Back cover">' +
+      window.PD_COVERS.render(COVER_ID, "", true, pageAspect()) +
+      '<div class="back-overlay"><p class="back-blurb">From the daguerreotype to the deepfake, from aperture to informed consent: <b>The Dictionary of Photography</b> defines ' + TERMS.length + ' terms twice over, in plain English and in technical depth, with illustrated study pages on composition and on photographing people with care.</p>' +
+      '<p class="back-author">Brian Otieno</p>' +
+      '<p class="back-links"><a href="https://storitellah.com" rel="noopener">storitellah.com</a><br>info@storitellah.com</p></div></article>';
   }
   function titlePage(side, folio) {
     return '<article class="page page--' + side + ' page--front" aria-label="Title page">' +
@@ -493,12 +492,13 @@ window.PD = (function () {
       '<p class="eyebrow">Storitellah</p>' +
       '<h2 class="title-h">The Dictionary of Photography</h2>' +
       '<p class="title-sub">The essential lexicon of visual language, technique and practice</p>' +
+      '<p class="title-author">Brian Otieno</p>' +
       '<hr class="rule">' +
       '<div class="intro">' +
       "<p>This dictionary explains " + TERMS.length + " words used by photographers, from the chemistry of the first daguerreotypes to the vocabulary of social media and the ethics of photographing people. Every entry gives two senses: a short explanation <b>in short</b>, for anyone who has just picked up a camera, and a <b>technical</b> sense with the precise meaning, the numbers and the history.</p>" +
       "<p>Eighteen illustrated study pages in the middle of the book show eight core composition techniques at work, and set out the principles of consent and dignity used by NGOs and community storytellers.</p>" +
       "</div>" +
-      '<p class="imprint">Published by <a href="https://storitellah.com" rel="noopener">Storitellah</a> · Written in British English</p>' +
+      '<p class="imprint">Written by Brian Otieno · Published by <a href="https://storitellah.com" rel="noopener">Storitellah</a> · British English</p>' +
       "</div></article>";
   }
   function contentsPage(side, folio, ctx) {
@@ -579,12 +579,12 @@ window.PD = (function () {
       runhead(side, folio, "Colophon") +
       '<div class="body colophon">' + F.emblem() +
       '<h2 class="sec-h">About this book</h2>' +
-      "<p><b>The Dictionary of Photography by Storitellah</b> is a reference to the language of photography: technique, equipment, history, the vocabulary of social media, and the ethics of photographing people.</p>" +
+      "<p><b>The Dictionary of Photography</b>, written by Brian Otieno and published by Storitellah, is a reference to the language of photography: technique, equipment, history, the vocabulary of social media, and the ethics of photographing people.</p>" +
       "<p>Definitions follow established photographic usage. Historical dates and the descriptions of sector codes have been checked against published sources; examples of practice refer to published work by the photographers named.</p>" +
       '<h3 class="sec-h2">Contact</h3>' +
       '<p class="contact">Suggestions, corrections and licensing:<br><a href="mailto:info@storitellah.com">info@storitellah.com</a></p>' +
       '<p class="contact"><a href="https://storitellah.com" rel="noopener">storitellah.com</a></p>' +
-      '<p class="small">Set in Libre Baskerville and Source Serif 4, with IPA in Gentium. Plates drawn for this edition.</p>' +
+      '<p class="small">Set in Libre Baskerville and Source Serif 4, with IPA in Gentium. Cover border of photography doodles in mudcloth-style marks; plates drawn for this edition.</p>' +
       "</div></article>";
   }
   function notesPage(side, folio) {
