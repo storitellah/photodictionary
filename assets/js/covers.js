@@ -15,6 +15,7 @@ window.PD_COVERS = (function () {
     bulb: '<circle cx="12" cy="9" r="5"/><path d="M9.5 13.5v3h5v-3M10 19h4M12 1.5v1.5M5 4l1 1M19 4l-1 1M3.5 9h1.5M19 9h1.5"/>',
     tripod: '<rect x="8" y="2.5" width="8" height="5.5" rx="1"/><path d="M12 8v4M12 12l-6 9.5M12 12l6 9.5M12 12v9.5"/>',
     eye: '<path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3.3"/><circle cx="12" cy="12" r="1"/>',
+    tlr: '<rect x="6" y="3.5" width="12" height="18.5" rx="1.4"/><path d="M7 3.5l1.6-2h6.8l1.6 2M6 11.9h12M18 13.5h1.8v2.5H18"/><circle cx="12" cy="7.7" r="2.6"/><circle cx="12" cy="7.7" r="1"/><circle cx="12" cy="16.6" r="3.4"/><circle cx="12" cy="16.6" r="1.6"/><path d="M7.7 6.3h.9M7.7 9.2h.9"/>',
     sun: '<circle cx="12" cy="12" r="4.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9L7 7M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/>'
   };
   var ORDER = ["camera", "aperture", "film", "bulb", "lens", "tripod", "eye", "roll", "sun"];
@@ -149,7 +150,7 @@ window.PD_COVERS = (function () {
     var ty = Math.round(H * 0.48);
     if (back) return out + pubMark(t, H - 180) + icon("aperture", W / 2, 215, 52, t.ink, 1.3);
     out += titleBlock({ titleY: ty }, t) + pubMark(t, H - 180);
-    out += icon("eye", W / 2, ty - 210, 72, t.ink, 1.3);
+    out += icon("tlr", W / 2, ty - 205, 84, t.ink, 1.2);
     return out;
   }
 
